@@ -9,26 +9,24 @@ window.addEventListener('DOMContentLoaded', function(){
 function genProducts(products) {
    products.map((product, index) => {
     const productDiv = document.createElement('div');
+    
+    productDiv.classList.add('product-item')
     productDiv.innerHTML = `
-    <div class="product-item">
-      <div class="product-img">
-        <img src=${product.img} alt="">
-      </div>
-      <article class="product-info">
-        <p>${product.title}</p>
-        <p>${product.price}</p>
-      </article>
-      <div class="hover-icons">
-        <ul>
-          <li><img src="public/icons/cart.svg" alt=""></li>
-          <li><img src="public/icons/eye.svg" alt=""></li>
-          <li><img src="public/icons/hart.svg" alt=""></li>
-        </ul>
-      </div>
-      <button class="add-to-cart">
-        ADD TO CART
-      </button>
+    <div class="product-img">
+      <img src=${product.img} alt="">
+      <ul class="hover-icons">
+        <li><img src="public/icons/cart.svg" alt=""></li>
+        <li><img src="public/icons/eye.svg" alt=""></li>
+        <li><img src="public/icons/hart.svg" alt=""></li>
+      </ul>
+    <button class="add-to-cart">
+      ADD TO CART
+    </button>
     </div>
+    <article class="product-info">
+      <p>${product.title}</p>
+      <p id="price">$ ${product.price}</p>
+    </article>
     `
      productsTemplate.appendChild(productDiv)
   })
